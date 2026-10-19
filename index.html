@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>لغة JavaScript وتفاعل صفحات الويب | سما مجدي الملط</title>
+<meta name="description" content="تقرير بحثي مصغر عن لغة JavaScript وتفاعل صفحات الويب - معهد الدلتا العالي">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--blue:#1d6fb8;--dark:#0b2e57;--line:#d5deea;--soft:#f3f7fb}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:'Cairo','Segoe UI',Tahoma,Arial,sans-serif;font-size:18px;line-height:2;color:#1f2937;background:#eef3f8}
+.hero{background:#fff;color:var(--dark);text-align:center;padding:34px 16px 36px;border-bottom:1px solid var(--line)}
+.hero img{width:120px;height:auto;border-radius:10px;border:1px solid var(--line);background:#fff}
+.hero .gov{font-size:15px;color:#555;margin-top:10px}
+.hero .inst{font-size:19px;font-weight:700;margin-bottom:4px;color:#111827}
+.hero h1{font-size:34px;line-height:1.6;margin:16px 0 4px;border:0;color:var(--dark);padding:0}
+.hero .sub{font-size:16px;color:#555}
+.meta{display:inline-block;margin-top:18px;background:var(--soft);border:1px solid var(--line);color:#1f2937;border-radius:10px;padding:8px 24px;font-size:16px;line-height:2}
+nav{background:#fff;border-bottom:1px solid var(--line);text-align:center;padding:10px;position:sticky;top:0;z-index:5}
+nav a{display:inline-block;margin:0 10px;color:var(--blue);text-decoration:none;font-weight:600;font-size:16px}
+main{max-width:860px;margin:22px auto;background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px 34px 40px}
+h1{font-size:28px;color:var(--dark);border-bottom:3px solid var(--blue);padding-bottom:6px;margin-top:34px}
+h2{font-size:21px;color:var(--blue);margin-top:28px;margin-bottom:0}
+p{margin:6px 0 12px}
+table{border-collapse:collapse;width:100%;margin:12px 0;font-size:16px;line-height:1.8}
+table.t th{background:var(--blue);color:#fff;padding:9px;border:1px solid var(--blue)}
+table.t td{padding:9px;border:1px solid var(--line);vertical-align:top}
+table.t tr:nth-child(even) td{background:var(--soft)}
+.code{direction:ltr;text-align:left;font-family:Consolas,'Courier New',monospace;background:#0f172a;color:#e2e8f0;border-radius:8px;padding:10px 16px;font-size:15px;line-height:1.8;overflow-x:auto}
+.note{background:#fff8e6;border-right:4px solid #f0b429;border-radius:6px;padding:8px 16px;margin:14px 0}
+.en{direction:ltr;unicode-bidi:embed}
+ol li,ul li{margin-bottom:4px}
+.ref p{direction:ltr;text-align:left;font-size:14px;line-height:1.7;word-break:break-all;margin:6px 0}
+.ref a{color:var(--blue)}
+.dl{display:inline-block;margin-top:10px;padding:9px 26px;background:var(--blue);color:#fff;text-decoration:none;border-radius:8px;font-weight:600;font-size:16px}
+footer{text-align:center;color:#64748b;font-size:14px;padding:6px 0 30px}
+@media(max-width:600px){body{font-size:16px}.hero h1{font-size:25px}main{padding:4px 16px 30px;margin:12px 8px}table{font-size:14px}nav a{margin:0 6px;font-size:14px}}
+</style></head><body>
+<header class="hero">
+  <img src="logo.jpg" alt="شعار معهد الدلتا">
+  <div class="gov">وزارة التعليم العالي</div>
+  <div class="inst">معهد الدلتا العالي لنظم المعلومات الإدارية والمحاسبية</div>
+  <h1>لغة JavaScript وتفاعل صفحات الويب</h1>
+  <div class="sub">تقرير بحثي مصغر &nbsp;|&nbsp; مقرر: تطبيقات الإنترنت والمنصات الإلكترونية</div>
+  <div class="meta">إعداد الطالب: سما مجدي توفيق محمد الملط<br>الرقم المرجعي: 2501508 &nbsp;|&nbsp; أكتوبر 2026</div>
+</header>
+<nav><a href="#intro">المقدمة</a><a href="#main">عرض الموضوع</a><a href="#refs">المراجع</a><a href="Sama_Magdy_Tawfik_Elmallah_2501508_Report.pdf">تحميل PDF</a></nav>
+<main>
+
+
+
+
+<h1 id="intro">المقدمة</h1>
+<p>لو فتحنا موقعاً ما وضغطنا على زر فظهرت قائمة، أو كتبنا في خانة بحث فظهرت اقتراحات فورية، فإن من يقف وراء هذه التفاعلات في الغالب هي لغة <b>JavaScript</b>. فبدون هذه اللغة تبقى صفحات الويب مجرد نصوص وصور ثابتة لا تستجيب لما يفعله المستخدم.</p>
+<p>يشرح هذا التقرير باختصار ما هي JavaScript، وكيف تُضاف إلى صفحة الويب، وكيف تحوّل الصفحة الثابتة إلى صفحة تفاعلية تتجاوب مع نقرات المستخدم، مع مثال بسيط يوضح الفكرة. وتكمن أهمية الموضوع في أن تفاعل المستخدم مع المنصات الإلكترونية، مثل المتاجر والمنصات التعليمية، يعتمد عليها بشكل كبير.</p>
+
+<h1 id="main">عرض الموضوع</h1>
+
+<h2>1. ما هي JavaScript؟</h2>
+<p>JavaScript لغة برمجة تعمل داخل متصفح الويب، وتُستخدم لإضافة السلوك والتفاعل إلى الصفحات. ويمكن تشبيه صفحة الويب بالجسم الحي: HTML هي الهيكل العظمي الذي يحدد المحتوى، وCSS هي الشكل الخارجي، أما JavaScript فهي الحركة التي تجعل الصفحة تستجيب لما يحدث.</p>
+<table class="t">
+<tr><th>اللغة</th><th>دورها في الصفحة</th></tr>
+<tr><td>HTML</td><td>تحديد المحتوى والهيكل: العناوين والفقرات والصور والأزرار</td></tr>
+<tr><td>CSS</td><td>تحديد الشكل: الألوان والخطوط والمسافات</td></tr>
+<tr><td>JavaScript</td><td>تحديد السلوك: ماذا يحدث عند الضغط أو الكتابة أو تحميل الصفحة</td></tr>
+</table>
+
+<h2>2. كيف نضيف JavaScript إلى الصفحة؟</h2>
+<p>يمكن كتابة الكود داخل وسم script في الصفحة نفسها، أو في ملف مستقل بامتداد js يُربط بالصفحة، والطريقة الثانية هي الأفضل في المواقع لأنها تُبقي الكود منظماً ويمكن استخدامه في عدة صفحات:</p>
+<table width="100%" border="1" cellspacing="0" cellpadding="6" bordercolor="#cbd5e1"><tr><td bgcolor="#f1f5f9" dir="ltr" align="left"><pre style="font-family:'DejaVu Sans Mono',monospace;font-size:10pt;line-height:1.25;margin:0">&lt;script src="script.js"&gt;&lt;/script&gt;</pre></td></tr></table>
+
+<h2>3. كيف تتفاعل الصفحة مع المستخدم؟</h2>
+<p>يقوم التفاعل على فكرة بسيطة: ينتظر المتصفح حدوث <b>حدث (Event)</b> مثل نقرة المستخدم، فينفّذ الكود المرتبط به، وغالباً يغيّر شيئاً في الصفحة عبر ما يُسمى <b>DOM</b>، وهو تمثيل عناصر الصفحة بحيث تستطيع JavaScript قراءتها وتعديلها.</p>
+<table class="t">
+<tr><th>الحدث</th><th>متى يحدث؟</th></tr>
+<tr><td><span class="en">click</span></td><td>عند الضغط على عنصر مثل زر أو رابط</td></tr>
+<tr><td><span class="en">input</span></td><td>عند كتابة المستخدم في خانة إدخال</td></tr>
+<tr><td><span class="en">submit</span></td><td>عند إرسال نموذج مثل تسجيل الدخول</td></tr>
+<tr><td><span class="en">load</span></td><td>عند اكتمال تحميل الصفحة</td></tr>
+</table>
+
+<h2>4. مثال عملي: زر يغيّر النص</h2>
+<p>نريد أن يتغير نص الفقرة عند الضغط على الزر. أولاً نكتب في HTML زراً وفقرة:</p>
+<table width="100%" border="1" cellspacing="0" cellpadding="6" bordercolor="#cbd5e1"><tr><td bgcolor="#f1f5f9" dir="ltr" align="left"><pre style="font-family:'DejaVu Sans Mono',monospace;font-size:10pt;line-height:1.25;margin:0">&lt;button id="btn"&gt;اضغط هنا&lt;/button&gt;
+&lt;p id="msg"&gt;مرحباً&lt;/p&gt;</pre></td></tr></table>
+<p>ثم نكتب في JavaScript:</p>
+<table width="100%" border="1" cellspacing="0" cellpadding="6" bordercolor="#cbd5e1"><tr><td bgcolor="#f1f5f9" dir="ltr" align="left"><pre style="font-family:'DejaVu Sans Mono',monospace;font-size:10pt;line-height:1.25;margin:0">document.getElementById("btn").addEventListener("click", function () {
+  document.getElementById("msg").textContent = "تم الضغط على الزر";
+});</pre></td></tr></table>
+<p>خطوات التنفيذ: الدالة getElementById تبحث عن العنصر بمعرّفه، وaddEventListener تجعل الزر ينتظر حدث النقر، وعند حدوثه يُنفَّذ الكود الذي يغيّر نص الفقرة. فتتغير الصفحة أمام المستخدم دون إعادة تحميلها.</p>
+
+<h2>5. استخدامات JavaScript في المنصات الإلكترونية</h2>
+<ul>
+<li><b>التحقق من النماذج:</b> مثل التأكد من كتابة البريد الإلكتروني بشكل صحيح قبل الإرسال.</li>
+<li><b>القوائم والعناصر المتحركة:</b> مثل القوائم المنسدلة ومعارض الصور.</li>
+<li><b>تحديث المحتوى دون إعادة تحميل:</b> مثل تحديث سلة المشتريات أو عرض نتائج البحث فوراً.</li>
+<li><b>تخصيص المظهر:</b> مثل الوضع الليلي الذي يغيّر ألوان الصفحة بضغطة زر.</li>
+</ul>
+
+<h2>6. الخلاصة</h2>
+<p>JavaScript هي اللغة التي تمنح صفحات الويب الحياة، فهي تستمع لأفعال المستخدم مثل النقر والكتابة وتستجيب لها بتغيير محتوى الصفحة أو شكلها فوراً. وتعلّم أساسياتها مع HTML وCSS خطوة مهمة لأي شخص يريد بناء منصات إلكترونية تفاعلية وسهلة الاستخدام.</p>
+
+<h1 id="refs">المراجع</h1>
+<div style="direction:ltr;text-align:left;">
+<p style="text-align:left;direction:ltr;">[1] MDN Web Docs, "What is JavaScript?" — <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/What_is_JavaScript">https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/What_is_JavaScript</a></p>
+<p style="text-align:left;direction:ltr;">[2] MDN Web Docs, "DOM scripting introduction" — <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/DOM_scripting">https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/DOM_scripting</a></p>
+<p style="text-align:left;direction:ltr;">[3] MDN Web Docs, "JavaScript" — <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">https://developer.mozilla.org/en-US/docs/Web/JavaScript</a></p>
+<p style="text-align:left;direction:ltr;">[4] MDN Web Docs, Glossary: "Event" — <a href="https://developer.mozilla.org/en-US/docs/Glossary/Event">https://developer.mozilla.org/en-US/docs/Glossary/Event</a></p>
+<p style="text-align:left;direction:ltr;">[5] تمت الاستعانة بأدوات الذكاء الاصطناعي للمساعدة في تنظيم المعلومات وتبسيط الشرح وتصحيح الصياغة.</p>
+</div>
+
+<p style="text-align:center"><a class="dl" href="Sama_Magdy_Tawfik_Elmallah_2501508_Report.pdf">تحميل التقرير PDF</a></p>
+</main>
+<footer>© 2026 سما مجدي توفيق محمد الملط - معهد الدلتا العالي</footer>
+</body></html>
